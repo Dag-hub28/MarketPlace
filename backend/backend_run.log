@@ -1,0 +1,41 @@
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\db\migrations\loader.py", line 187, in check_key
+    return self.graph.root_nodes(key[0])[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\threading.py", line 1044, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\threading.py", line 995, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 136, in inner_run
+    self.check_migrations()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\core\management\base.py", line 574, in check_migrations
+    executor = MigrationExecutor(connections[DEFAULT_DB_ALIAS])
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\db\migrations\executor.py", line 18, in __init__
+    self.loader = MigrationLoader(self.connection)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\db\migrations\loader.py", line 58, in __init__
+    self.build_graph()
+    ~~~~~~~~~~~~~~~~^^
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\db\migrations\loader.py", line 250, in build_graph
+    self.add_external_dependencies(key, migration)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\db\migrations\loader.py", line 214, in add_external_dependencies
+    parent = self.check_key(parent, key[0])
+  File "c:\Users\user\Desktop\mainapp\backend\venv\Lib\site-packages\django\db\migrations\loader.py", line 194, in check_key
+    raise ValueError(
+        "Dependency on app with no migrations: %s" % key[0]
+    )
+ValueError: Dependency on app with no migrations: jobs

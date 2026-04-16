@@ -1,0 +1,21 @@
+
+> local-services-frontend@0.0.1 build
+> vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 40 modules transformed.
+[33mwarnings when minifying css:
+▲ [WARNING] Expected identifier but found "." [css-syntax-error]
+
+    <stdin>:48:1:
+      48 │ ..card,
+         ╵  ^
+
+[39m
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.42 kB[22m[1m[22m[2m │ gzip:  0.29 kB[22m
+[2mdist/[22m[35massets/index-DS2cXw1x.css  [39m[1m[2m  2.35 kB[22m[1m[22m[2m │ gzip:  1.02 kB[22m
+[2mdist/[22m[36massets/index-qlDIbk06.js   [39m[1m[2m173.18 kB[22m[1m[22m[2m │ gzip: 55.79 kB[22m
+[32m✓ built in 1m 44s[39m
