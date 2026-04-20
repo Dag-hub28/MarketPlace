@@ -36,10 +36,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "backend.urls"
 
+import os
+
+frontend_dist = os.path.join(BASE_DIR, "..", "frontend", "dist")
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [frontend_dist],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
