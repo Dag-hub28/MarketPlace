@@ -28,8 +28,9 @@ router.register("cart", CartViewSet, basename="cart")
 router.register("orders", OrderViewSet, basename="order")
 
 import os
+from django.views.generic import TemplateView
 
-frontend_dist = os.path.join(settings.BASE_DIR, "..", "frontend", "dist")
+frontend_dist = os.path.join(settings.BASE_DIR, "dist")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -42,9 +43,7 @@ urlpatterns = [
         serve,
         {"document_root": os.path.join(frontend_dist, "assets")},
     ),
-    re_path(
-        r"^(?P<path>.*)$", serve, {"document_root": frontend_dist, "fallback": True}
-    ),
+    re_path(r"^.*$", TemplateView.as_view(template_name="index.html")),
 ]
 
 if settings.DEBUG:
